@@ -126,9 +126,9 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam,
   return DefWindowProcW(hwnd, uMsg, wParam, lParam);
 }
 
-int main() {
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                   LPSTR lpCmdLine, int nCmdShow) {
   WNDCLASSW wc = {};
-  HINSTANCE hInstance = GetModuleHandle(NULL);
   wc.lpfnWndProc = WindowProc;
   wc.hInstance = hInstance;
   wc.lpszClassName = L"BouncyWindowClass";
